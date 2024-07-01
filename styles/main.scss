@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header-bg{
+    background-image: url('https://res.cloudinary.com/dvdb1mzzy/image/upload/v1717431076/gisfe8zptjjhbnljgpbr.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.dropdowng-item{
+   @apply p-2 text-sm  hover:bg-blue-600 text-white rounded-lg;
+}
+
