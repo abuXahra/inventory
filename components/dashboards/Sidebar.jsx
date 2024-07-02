@@ -8,6 +8,8 @@ export default function Sidebar() {
 
     const [showDropItems, setShowDropItems] = useState(true)
 
+    
+
   return (
     <div className='w-60 min-h-screen bg-slate-800 text-slate-50 justify-between fixed'>
     {/* Top */}
