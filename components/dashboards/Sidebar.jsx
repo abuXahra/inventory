@@ -20,7 +20,7 @@ export default function Sidebar() {
     const inventoryLinks = [
         {
             title: 'Items',
-            href: '/dashboard/inventory/items',
+            href: '/dashboard/inventory',
         },
         {
             title: 'Item Groups',
@@ -78,7 +78,8 @@ export default function Sidebar() {
 
 
   return (
-    <div className='w-60 min-h-screen bg-slate-800 text-slate-50 justify-between fixed'>
+    // <div className='w-60 h-full overflow-y-auto flex flex-col bg-slate-800 text-slate-50 justify-between fixed scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100'>
+    <div className='w-60 min-h-screen overflow-hidden flex flex-col bg-slate-800 text-slate-50 justify-between fixed'>
     {/* Top */}
     <div className='flex flex-col bg-slate-950 text-slate-50 p-3'>
         {/* Logo */}
@@ -94,7 +95,7 @@ export default function Sidebar() {
         {/* home */}
         <Link href="" className='flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-lg'> 
             <Home className='w-4 h-4' /> 
-            <span>Home</span>
+            <span className='text-sm'>Home</span>
         </Link>
         
         {/* Sidebar Dropdown callapsible components  */}
@@ -118,7 +119,7 @@ export default function Sidebar() {
         {/* inventory */}
         <button onClick={()=> setShowDropItems(!showDropItems)} className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 
             <ShoppingBasket className='w-4 h-4' />
-            <span>Purchases</span>
+            <span className='text-sm'>Purchases</span>
         </button>
 {/* 
       <div className={`${showDropItems? 'hidden' :'flex transition ease-in-out duration-500'}`}>
@@ -135,23 +136,23 @@ export default function Sidebar() {
 
         <Link href="#" className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 
             <Home className='w-4 h-4' />
-            <span>Integration</span>
+            <span className='text-sm'>Integration</span>
         </Link>
         
         
         <Link href="#" className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 
             <Cable className='w-4 h-4' />
-            <span>Integration</span>
+            <span className='text-sm'>Integration</span>
         </Link>
 
         <Link href="#" className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 
             <BarChart4 className='w-4 h-4' />
-            <span>Report</span>
+            <span className='text-sm'>Report</span>
         </Link>
 
         <Link href="#" className='flex items-center  space-x-2 text-slate-50 p-2 rounded-lg'> 
             <File className='w-4 h-4' />
-            <span>Document</span>
+            <span className='text-sm'>Document</span>
         </Link>
         </nav>
 
