@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ItemGroups() {
+export default function Categories() {
   return (
     <div>ItemGroups</div>
   )
