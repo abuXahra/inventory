@@ -78,22 +78,23 @@ export default function Sidebar() {
 
 
   return (
+    // overflow-hidden
     // <div className='w-60 h-full overflow-y-auto flex flex-col bg-slate-800 text-slate-50 justify-between fixed scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100'>
-    <div className='w-60 min-h-screen overflow-hidden flex flex-col bg-slate-800 text-slate-50 justify-between fixed'>
+    <div className='w-60 min-h-screen overflow-y-auto  flex flex-col bg-slate-800 text-slate-50 justify-between fixed'>
     {/* Top */}
     <div className='flex flex-col bg-slate-950 text-slate-50 p-3'>
         {/* Logo */}
-        <Link href="#" className='flex space-x-2 items-center p-2'>
+        <Link href="/dashboard/home/overview" className='flex space-x-2 items-center p-2'>
             <ShoppingCart/>
             <span className='font-semibold text-xl'>Inventory</span>
         </Link>
     </div>
     
     {/* Nav Links */}
-    <nav className='flex flex-col px-3 py-6 '>
+    <nav className='flex flex-col px-3 py-6 gap-2'>
        
         {/* home */}
-        <Link href="" className='flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-lg'> 
+        <Link href="/dashboard/home/overview" className='flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-lg'> 
             <Home className='w-4 h-4' /> 
             <span className='text-sm'>Home</span>
         </Link>

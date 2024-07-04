@@ -13,24 +13,24 @@ import { Play } from 'lucide-react'
 
 export default function SidebarDropdownLink({title, items, icon: Icon}) {
 
-    const [showDropItems, setShowDropItems] = useState(false)
-    const [hasBgColor, setHasBgColor] = useState(false)
+  const [showDropItems, setShowDropItems] = useState(false)
+const [hasBgColor, setHasBgColor] = useState(false)
 
-    const handleClick = () =>{
+ const handleClick = () =>{
         setShowDropItems(!showDropItems),
         setHasBgColor(!hasBgColor)
     }
 
   return (
     <Collapsible>
-            <CollapsibleTrigger>     
-                <div onClick={handleClick} className={ hasBgColor ? `flex bg-slate-900 items-center  justify-between mb-1  space-x-2 text-slate-50 p-2 rounded-lg w-[215px] hover:bg-slate-900` : `flex bg-none items-center  justify-between mb-1  space-x-2 text-slate-50 p-2 rounded-lg w-[215px] hover:bg-slate-900`}>
-                  <div className='flex items-center  space-x-2'>
-                  {<Icon className='w-4 h-4' />}
+    
+            <CollapsibleTrigger onClick={handleClick} className={ hasBgColor ? `justify-between items-center w-full flex bg-slate-900 rounded-lg hover:bg-slate-900 pr-2 ` : 
+              `justify-between items-center w-full flex bg-none rounded-lg hover:bg-slate-900 pr-2 `}> 
+            <div className="p-2 flex items-center space-x-2"> 
+              {<Icon className='w-4 h-4' />}
                     <span className='text-sm'>{title}</span>
-                </div>  
-                <Play className={ showDropItems ? `w-3 h-3 rotate-90  transition duration-300` : `w-3 h-3 rotate-0 transition duration-300`}/>
-                </div>
+                    </div>
+                    <Play className={ showDropItems ? `w-3 h-3 rotate-90  transition duration-300` : `w-3 h-3 rotate-0 transition duration-300`}/>
             </CollapsibleTrigger>
             <CollapsibleContent>
             {
@@ -41,3 +41,7 @@ export default function SidebarDropdownLink({title, items, icon: Icon}) {
 
   )
 }
+
+
+
+
