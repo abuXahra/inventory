@@ -10,25 +10,31 @@ import {
   } from "@/components/ui/collapsible"
 import CollapsibleLink from './CollapsibleLink'
 import SidebarDropdownLink from './SidebarDropdownLink'
+import { usePathname } from 'next/navigation'
   
 
 
 export default function Sidebar() {
 
-  
+    // making a route active
+    const pathname = usePathname();
+
 // Inventor Items
     const inventoryLinks = [
         {
             title: 'Items',
             href: '/dashboard/inventory',
+            addButtonHref: '/dashboard/inventory/items/new'
         },
         {
             title: 'Item Groups',
             href: '#',
+            addButtonHref: "#"
         },
         {
             title: 'Inventory Adjustments',
             href: '#',
+            addButtonHref:"#"
         }
     ]
 
@@ -37,39 +43,48 @@ export default function Sidebar() {
         {
             title: 'customers',
             href: '#',
+            addButtonHref:"#"
         },
         {
             title: 'Sales Orders',
             href: '#',
+            addButtonHref:"#"
         },
 
         {
             title: 'Packages',
             href: '#',
+             addButtonHref:"#"            
         },
         {
             title: 'Shipments',
             href: '#',
+            addButtonHref:"#"
         },
         {
             title: 'Invoices',
             href: '#',
+            addButtonHref:"#"
         },
         {
             title: 'Sales Receipts',
             href: '#',
+            addButtonHref:"#"
         },
         {
             title: 'Payment Received',
             href: '#',
+            addButtonHref:"#"
         },
         {
             title: 'Sales Return',
             href: '#',
+            addButtonHref:"#"
         },
         {
             title: 'Credit Not',
             href: '#',
+            addButtonHref:"#"            
         },
     ]
     
@@ -93,8 +108,14 @@ export default function Sidebar() {
     {/* Nav Links */}
     <nav className='flex flex-col px-3 py-6 gap-2'>
        
+
+    {/* pathname === navItem.href
+                ? " py-1 border-b-2 border-blue-600"
+                : "py-1" */}
+
+
         {/* home */}
-        <Link href="/dashboard/home/overview" className='flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-lg'> 
+        <Link href="/dashboard/home/overview" className={pathname === "/dashboard/home/overview" ? `${'flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-lg'}`: `${'flex items-center space-x-2 text-slate-50 p-2 rounded-lg'}`}> 
             <Home className='w-4 h-4' /> 
             <span className='text-sm'>Home</span>
         </Link>
@@ -118,27 +139,12 @@ export default function Sidebar() {
   
 
         {/* inventory */}
-        <button onClick={()=> setShowDropItems(!showDropItems)} className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 
+        <button  className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 
             <ShoppingBasket className='w-4 h-4' />
             <span className='text-sm'>Purchases</span>
         </button>
-{/* 
-      <div className={`${showDropItems? 'hidden' :'flex transition ease-in-out duration-500'}`}>
-            <ul className='flex flex-col ml-8'>
-                <li className='dropdowng-item'>Purchases 1</li>
-                <li className='dropdowng-item' >Purchases 2</li>
-                <li className='dropdowng-item'>Purchases 3</li>
-                <li className='dropdowng-item'>Purchases 4</li>
-                <li className='dropdowng-item'>Purchases 5</li>
-            </ul>
-        </div> */}
 
-      
-
-        <Link href="#" className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 
-            <Home className='w-4 h-4' />
-            <span className='text-sm'>Integration</span>
-        </Link>
+    
         
         
         <Link href="#" className='flex items-center space-x-2 text-slate-50 p-2 rounded-lg'> 

@@ -34,7 +34,7 @@ const [hasBgColor, setHasBgColor] = useState(false)
             </CollapsibleTrigger>
             <CollapsibleContent>
             {
-                items.map((item, i)=>(<CollapsibleLink title={item.title} href={item.href} key={i}/>))
+                items.map((item, i)=>(<CollapsibleLink title={item.title} addButtonHref={item.addButtonHref} href={item.href} key={i}/>))
             }
             </CollapsibleContent>
         </Collapsible>
