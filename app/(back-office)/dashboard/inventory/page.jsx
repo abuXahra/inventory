@@ -21,7 +21,7 @@ export default function Inventory() {
       {
         title: "Items",
         description:"Create standalone items and Service that you buy and sell",
-        link: "/dashboard/inventory/items/new",
+        link: "inventory/categories/new",
         linkTitle: "New Item",
         enabled: "true",
         icon: Shirt,
@@ -51,7 +51,6 @@ export default function Inventory() {
       <FixedHeader newLink={"/dashboard/inventory/items/new"}/>
 
       <div className='grid grid-col-1 lg:grid-cols-2  gap-8 py-8 px-16'>
-
       {/* Option Card */}
       {
         optionCards.map((card, i)=>(
