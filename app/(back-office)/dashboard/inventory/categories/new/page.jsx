@@ -58,6 +58,9 @@ export default function NewCategory() {
         <TextAreaInput
           label={'Description'}
           name={'Description'}
+          register={register}
+          errors={errors}
+          placeholder={'Type the Description'}
         />
 
             </div>
