@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Categories() {
   return (
-    <div>ItemGroups</div>
+    <div>Categories</div>
   )
 }

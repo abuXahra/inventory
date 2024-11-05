@@ -13,9 +13,30 @@ export default function NewCategory() {
 
   const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
 
-  const onSubmit = (data)=>{
-      console.log(data)
-      reset();
+  const onSubmit = async (data)=>{
+    console.log("====== Data \n",data , "\n=========")
+    setLoading(true)
+    const baseUrl = "http://localhost:3000"
+    try {
+      const response = await fetch(`${baseUrl}/api/categories`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      } );
+
+      if (response.ok) {
+        console.log("====== RESPONSE \n",response , "\n=========")
+        reset();
+        setLoading(false)
+      }
+    } catch (error) {
+      setLoading(false)
+      console.log(error)
+    }
+    // // console.log(data)
+    //   reset();
   }
 
   const [loading, setLoading] = useState(false);
@@ -37,23 +58,7 @@ export default function NewCategory() {
             placeholder={'Type the Category title '}
         />
 
-        <TextInput 
-            label={'Brand'}
-            className='w-full'
-            name={'brand'}
-            errors={errors} 
-            register={register} 
-            placeholder={'Type the Brand '}
-        />
-
-        <TextInput 
-            label={'Model'}
-            className='w-full'
-            name={'Model'}
-            errors={errors} 
-            register={register} 
-            placeholder={'Type the Model '}
-        />
+       
 
         <TextAreaInput
           label={'Description'}

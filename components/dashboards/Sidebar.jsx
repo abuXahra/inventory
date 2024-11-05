@@ -27,14 +27,24 @@ export default function Sidebar() {
             addButtonHref: '/dashboard/inventory/items/new'
         },
         {
-            title: 'Item Groups',
-            href: '#',
-            addButtonHref: "#"
+            title: 'Categories',
+            href: '/dashboard/inventory/categories',
+            addButtonHref: "/dashboard/inventory/categories/new"
         },
         {
-            title: 'Inventory Adjustments',
-            href: '#',
-            addButtonHref:"#"
+            title: 'Brands',
+            href: '/dashboard/inventory/brands',
+            addButtonHref:"/dashboard/inventory/brands/new"
+        },
+        {
+            title: 'Units',
+            href: '/dashboard/inventory/units',
+            addButtonHref:"/dashboard/inventory/units/new"
+        },
+        {
+            title: 'Warehouse',
+            href: '/dashboard/inventory/warehouse',
+            addButtonHref:"/dashboard/inventory/warehouse/new"
         }
     ]
 
